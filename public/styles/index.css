@@ -4,7 +4,8 @@ html, body {
 }
 
 body {
-  background-image: url('../assets/signin-background.jpg');
+  background: repeating-linear-gradient(#e66465, #e66465 20px, #9198e5 20px, #9198e5 25px);
+  /**background-image: url('../assets/signin-background.jpg');**/
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
