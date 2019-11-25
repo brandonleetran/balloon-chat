@@ -26,7 +26,7 @@
             aria-describedby="basic-addon2">
           <div class="input-group-append">
             <button class="btn btn-outline-secondary" type="button">Send</button>
-            <button onClick="voiceChat();" class="btn btn-outline-secondary" type="button">Join Voice</button>
+            <button class="btn btn-outline-secondary" type="button">Join Voice</button>
           </div> <!-- input-group-append -->
         </div> <!-- input-group -->
       </div> <!-- chat-form -->
@@ -38,7 +38,7 @@
             <form>
               <div class="form-group">
                 <input onkeypress="enterKey(event);" type="text" data-type="sign-in" maxlength="8"
-                       placeholder="Display Name" class="form-control form-control-inline" style="text-align: center;" />
+                  placeholder="Display Name" class="form-control form-control-inline" style="text-align: center;" />
               </div> <!-- form-group -->
             </form> <!-- form -->
           </div> <!-- col-lg-10 ... -->
@@ -56,7 +56,6 @@
     var socket = io({ transports: ['websocket'] }).connect('http://localhost');
     var sendButton = document.getElementsByClassName('input-group-append')[0].children[0];
     var voiceButton = document.getElementsByClassName('input-group-append')[0].children[1];
-
     function enterKey(e) {
       if (e.target.dataset.type == 'send-balloon' && e.key == 'Enter') {
         sendButton.click();
@@ -87,16 +86,13 @@
     socket.on('balloon message', function (msg) {
       pushBalloon(msg);
     });
-    
     socket.on('client counter', function (counter) {
       document.getElementById('chat-count').innerHTML = "Online: " + counter;
     });
-    
     // emit to server
     function emitBalloon(msg) {
       socket.emit('balloon message', msg);
     }
-    
   </script>
 </body>
 
