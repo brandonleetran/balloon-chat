@@ -87,7 +87,16 @@
     socket.on('balloon message', function (msg) {
       pushBalloon(msg);
     });
-
+    
+    socket.on('client counter', function (counter) {
+      document.getElementById('chat-count').innerHTML = "Online: " + counter;
+    });
+    
+    // emit to server
+    function emitBalloon(msg) {
+      socket.emit('balloon message', msg);
+    }
+    
   </script>
 </body>
 
