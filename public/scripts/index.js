@@ -10,7 +10,7 @@ $('.chat-head').hide();
 function signIn() {
     name = $('.form-group')[0].children[0].value;
     var box = $('#flex-child');
-    document.getElementsByClassName('chat-head')[0].innerHTML = "hello " + name;
+    document.getElementsByClassName('chat-head')[0].innerHTML = "Hello " + name;
 
     if (name != "") {
 
